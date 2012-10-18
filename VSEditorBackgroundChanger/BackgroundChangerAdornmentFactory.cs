@@ -15,7 +15,6 @@ namespace NateGreenwood.VSEditorBackgroundChanger
     {
         [Export(typeof(AdornmentLayerDefinition))]
         [Name("BackgroundTextViewWorker")]
-        //[Order(After="Caret")]
         [Order(Before = PredefinedAdornmentLayers.TextMarker)]
         public AdornmentLayerDefinition EditorAdornmentLayer;
 
