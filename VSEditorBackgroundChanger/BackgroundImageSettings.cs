@@ -56,12 +56,12 @@
                             if (parts.Any() && !string.IsNullOrEmpty(parts[1]))
                             {
                                 string baseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                                if (baseDirectory != null) ImagePath = Path.Combine(baseDirectory, parts[1]);
+                                if (baseDirectory != null) ImagePath = Path.Combine(baseDirectory, parts[1], ImageName);
                             }
                         }
                         if (ImagePath != null)
                         {
-                            Bitmap = new BitmapImage(new Uri(Path.Combine(ImagePath, "Images", ImageName)));
+                            Bitmap = new BitmapImage(new Uri(ImagePath));
                         }
                         else
                         {
