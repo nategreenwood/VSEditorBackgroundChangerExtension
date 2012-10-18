@@ -31,8 +31,10 @@
 
     By default, when the extension is installed, a predefined image directory
     and default image has been setup. These can be easily changed by modifying
-    the config.dat file within the extension's installation directory. 
-
+    the config.dat file within the extension's installation directory. The most common
+    installation location is:
+    C:\Users\<User Name>\AppData\Local\Microsoft\VisualStudio\11.0\Extensions\
+    
     Config.dat
     =====================================================================
     This is the primary method for manually adding/changing the background 
