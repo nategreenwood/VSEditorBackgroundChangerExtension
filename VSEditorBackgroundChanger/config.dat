@@ -1,1 +1,1 @@
-﻿img_directory=C:\BackgroundImages;img_name=bkgrd_1.png;opacity=0.35;location=BottomRight;fill=Normal
+﻿img_directory=[VSIXInstallDirectory];img_name=bkgrd_1.png;opacity=0.35;location=BottomRight;fill=Normal

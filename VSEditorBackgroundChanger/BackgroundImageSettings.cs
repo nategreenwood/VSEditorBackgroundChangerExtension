@@ -1,23 +1,16 @@
 ﻿namespace NateGreenwood.VSEditorBackgroundChanger
 {
-    using System.IO;
     using System;
+    using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Text;
-    using System.Windows.Media.Imaging;
     using System.Windows.Controls;
+    using System.Windows.Media.Imaging;
 
-    class BackgroundImageSettings
+    internal class BackgroundImageSettings
     {
         private readonly Uri _configurationFile;
-
-        public Image Image { get; private set; }
-        public BitmapImage Bitmap { get; private set; }
-        public string ImagePath { get; private set; }
-        public string ImageName { get; private set; }
-        public double Opacity { get; private set; }
-        public string Location { get; private set; }
-        public string ImageFill { get; private set; }
 
         protected BackgroundImageSettings()
         {
@@ -32,6 +25,14 @@
 
             ParseConfigurationFile();
         }
+
+        public Image Image { get; private set; }
+        public BitmapImage Bitmap { get; private set; }
+        public string ImagePath { get; private set; }
+        public string ImageName { get; private set; }
+        public double Opacity { get; private set; }
+        public string Location { get; private set; }
+        public string ImageFill { get; private set; }
 
         private void ParseConfigurationFile()
         {
@@ -49,13 +50,30 @@
                     {
                         ImagePath = options.Single(d => d.Contains("img_directory")).Split('=')[1];
                         ImageName = options.Single(d => d.Contains("img_name")).Split('=')[1];
+                        if (ImagePath.Equals("[VSIXInstallDirectory]"))
+                        {
+                            ImagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                        }
+                        if (ImagePath != null)
+                        {
+                            Bitmap = new BitmapImage(new Uri(Path.Combine(ImagePath, "Images", ImageName)));
+                        }
+                        else
+                        {
+                            throw new Exception(
+                                "A valid image directory could not be parsed from the configuration file.");
+                        }
                         Opacity = double.Parse(options.Single(d => d.Contains("opacity")).Split('=')[1]);
                         Location = options.Single(d => d.Contains("location")).Split('=')[1];
                         ImageFill = options.Single(d => d.Contains("fill")).Split('=')[1];
 
-                        Bitmap = new BitmapImage(new Uri(Path.Combine(ImagePath, ImageName)));
                         Image.Source = Bitmap;
                         Image.Opacity = Opacity;
+
+                        Image.Width = Bitmap.PixelWidth;
+                        Image.Height = Bitmap.PixelHeight;
+
+                        Image.StretchDirection = StretchDirection.Both;
                     }
                     else
                     {
@@ -65,7 +83,6 @@
                 catch (Exception e)
                 {
                     // Create setting defaults
-
                 }
             }
         }
