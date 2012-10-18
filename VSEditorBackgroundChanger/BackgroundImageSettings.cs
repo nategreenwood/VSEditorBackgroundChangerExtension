@@ -50,9 +50,14 @@
                     {
                         ImagePath = options.Single(d => d.Contains("img_directory")).Split('=')[1];
                         ImageName = options.Single(d => d.Contains("img_name")).Split('=')[1];
-                        if (ImagePath.Equals("[VSIXInstallDirectory]"))
+                        if (ImagePath.Contains("[VSIXInstallDirectory]"))
                         {
-                            ImagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                            string[] parts = ImagePath.Split('\\');
+                            if (parts.Any() && !string.IsNullOrEmpty(parts[1]))
+                            {
+                                string baseDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                                if (baseDirectory != null) ImagePath = Path.Combine(baseDirectory, parts[1]);
+                            }
                         }
                         if (ImagePath != null)
                         {

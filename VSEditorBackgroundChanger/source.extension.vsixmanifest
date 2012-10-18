@@ -6,9 +6,8 @@
         <Identity Id="ef854b25-f087-4923-8ae6-dc2cf20415ea" Version="1.0" Language="en-US" Publisher="Nate Greenwood" />
         <DisplayName>VSEditorBackgroundChanger</DisplayName>
         <Description xml:space="preserve">A simple Visual Studio extension for changing the main text editor background. </Description>
-        <Tags>
-            Visual Studio 2012, IDE, Background, Text Editor
-        </Tags>
+        <PreviewImage>PackageImage.png</PreviewImage>
+        <Tags>Visual Studio 2012, IDE, Background, Text Editor</Tags>
     </Metadata>
     <Installation InstalledByMsi="false">
         <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="11.0" />
