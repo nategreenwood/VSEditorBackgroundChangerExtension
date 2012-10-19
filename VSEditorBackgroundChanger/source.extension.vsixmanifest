@@ -4,8 +4,9 @@
                  xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
         <Identity Id="ef854b25-f087-4923-8ae6-dc2cf20415ea" Version="1.0" Language="en-US" Publisher="Nate Greenwood" />
-        <DisplayName>VSEditorBackgroundChanger</DisplayName>
+        <DisplayName>VS Text Editor Background Changer</DisplayName>
         <Description xml:space="preserve">A simple Visual Studio extension for changing the main text editor background. </Description>
+        <MoreInfo>http://nategreenwood.com</MoreInfo>
         <PreviewImage>PackageImage.png</PreviewImage>
         <Tags>Visual Studio 2012, IDE, Background, Text Editor</Tags>
     </Metadata>
