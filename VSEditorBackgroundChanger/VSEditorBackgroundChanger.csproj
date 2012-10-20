@@ -161,6 +161,7 @@
     <None Include="Key.snk" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnvBackgroundManager.cs" />
     <Content Include="Images\bkgrd_1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <IncludeInVSIX>true</IncludeInVSIX>

@@ -30,8 +30,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.2.0")]
+[assembly: AssemblyFileVersion("1.0.2.0")]
 [assembly:
     InternalsVisibleTo(
         "VSEditorBackgroundChanger_UnitTests, PublicKey=002400000480000094000000060200000024000052534131000400000100010077bc5f679ba2fd5a65a2462d8ffb1546957515734bbdaf72a4c9e10afd77e8b0bd43c94c4529e80fc45ca4868b1e78912e99f5e91a786f322bd4ff7fdf64265a3a0d8ab6a8d38f7fa80f89a0f2775ab98736b1dcccc955cb68537ad59a76feca091efa5aea98d8368c30e6acaadc04172e7e78e82f397a0ce1648e769b60f2b1"

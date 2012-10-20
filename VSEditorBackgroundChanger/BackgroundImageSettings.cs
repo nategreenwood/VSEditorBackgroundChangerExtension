@@ -26,6 +26,7 @@
             ParseConfigurationFile();
         }
 
+        public string EnvironmentImagePathAndName { get; internal set; }
         public Image Image { get; private set; }
         public BitmapImage Bitmap { get; private set; }
         public string ImagePath { get; private set; }
@@ -79,6 +80,13 @@
                         Image.Height = Bitmap.PixelHeight;
 
                         Image.StretchDirection = StretchDirection.Both;
+
+                        // Environment related settings
+                        var envImageOption = options.Single(d => d.Contains("env_image"));
+                        if(!string.IsNullOrEmpty(envImageOption))
+                        {
+                            EnvironmentImagePathAndName = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),envImageOption.Split('=')[1]);
+                        }
                     }
                     else
                     {

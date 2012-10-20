@@ -1,1 +1,1 @@
-﻿img_directory=[VSIXInstallDirectory]\Images;img_name=ExampleWatermark.jpg;opacity=0.35;location=BottomRight;fill=Normal
+﻿img_directory=[VSIXInstallDirectory]\Images;img_name=ExampleWatermark.jpg;opacity=0.35;location=BottomRight;fill=Normal;

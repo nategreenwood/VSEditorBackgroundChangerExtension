@@ -40,6 +40,9 @@
                 IWpfTextView newTextView = _backgroundView;
                 newTextView.ViewportWidthChanged += onSizeChangedEventHandler;
                 newTextView.ViewportHeightChanged += onSizeChangedEventHandler;
+
+                // Set the environment background
+                EnvBackgroundManager.ApplyEnvironmentBackground(_settings);
             }
             catch (Exception e)
             {

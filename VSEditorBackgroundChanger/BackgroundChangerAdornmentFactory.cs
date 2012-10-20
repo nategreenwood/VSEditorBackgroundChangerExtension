@@ -11,7 +11,7 @@
     [TextViewRole("DOCUMENT")]
     internal sealed class BackgroundChangerAdornmentFactory : IWpfTextViewCreationListener
     {
-        [Export(typeof (AdornmentLayerDefinition))] [Name("BackgroundTextViewWorker")] [Order(Before = PredefinedAdornmentLayers.TextMarker)] public AdornmentLayerDefinition EditorAdornmentLayer;
+        [Export(typeof (AdornmentLayerDefinition))] [Name("BackgroundTextViewWorker")] [Order(Before = PredefinedAdornmentLayers.CurrentLineHighlighter)] public AdornmentLayerDefinition EditorAdornmentLayer;
 
         public BackgroundChangerAdornmentFactory()
         {
