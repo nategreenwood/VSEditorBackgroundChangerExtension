@@ -54,9 +54,9 @@
                     permissions are available on the folder.
     img_name:       The specific image name. Only .jpg and .png formats have been 
                     tested, so your mileage may vary.
-    opacity:        A 0.0 - 1.0 value which sets the images opacity. An opacity of 1.0
+    opacity:        A 0 - 100 value which sets the images opacity. An opacity of 100
                     will have no opacity. 
-                    Default: The default opactiy is set at 0.35. This seems to be a
+                    Default: The default opactiy is set at 35. This seems to be a
                     good blend to allow text to flow over the image without much 
                     interference
     location:       There are 5 discrete position the image can be put. They are, 
