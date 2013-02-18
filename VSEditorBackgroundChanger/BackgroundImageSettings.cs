@@ -69,7 +69,8 @@
                             throw new Exception(
                                 "A valid image directory could not be parsed from the configuration file.");
                         }
-                        Opacity = double.Parse(options.Single(d => d.Contains("opacity")).Split('=')[1]);
+
+                        Opacity = Convert.ToDouble(options.Single(d => d.Contains("opacity")).Split('=')[1]) / 100;
                         Location = options.Single(d => d.Contains("location")).Split('=')[1];
                         ImageFill = options.Single(d => d.Contains("fill")).Split('=')[1];
 
